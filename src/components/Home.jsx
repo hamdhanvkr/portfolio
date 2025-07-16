@@ -1,7 +1,7 @@
 import React from 'react';
 import myPhoto from '../assets/Me1.jpg';
 // import myPhoto from '../assets/my_photo.jpg';
-// import resumePDF from '../assets/Mohamed_Hamdhan_Resume.pdf';
+import resumePDF from '../assets/CV.pdf';
 
 function Home() {
 
@@ -29,7 +29,7 @@ function Home() {
 						web development and digital innovation.
 					</p>
 					<a
-						// href={resumePDF}
+						href={resumePDF}
 						download="Mohamed_Hamdhan_Resume"
 						className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 transition duration-300"
 					>
