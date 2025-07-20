@@ -13,7 +13,7 @@ function About() {
                         className="w-80 h-96 rounded-full object-cover shadow-lg"
                     />
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">About Me</h2>
+                        <h2 className="text-2xl font-bold mb-4 lg:text-3xl">About Me</h2>
                         <p className="text-gray-700 leading-relaxed text-justify max-w-4xl">
                             I am a passionate Full Stack Developer with a strong foundation in both frontend and backend development, dedicated to crafting dynamic and scalable web applications. I hold a Master of Computer Applications (MCA) degree from Jamal Mohamed College, which has equipped me with in-depth knowledge of software development principles and emerging technologies.
                             <br /><br />

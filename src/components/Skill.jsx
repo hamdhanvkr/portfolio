@@ -17,16 +17,17 @@ function Skill() {
     return (
         <section id="skills"
             className="min-h-screen -mt-20 py-16 px-6 lg:px-24 flex flex-col items-center justify-center">
-            <h2 className="text-2xl font-bold mb-10" data-aos="fade-down">Skills</h2>
+            <h2 className="text-2xl font-bold mb-10 lg:text-3xl" data-aos="fade-down">Skills</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8" data-aos="fade-up">
                 {skills.map((skill, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-2 hover:scale-105 duration-300"
+                        className="flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg
+                         transition-transform transform hover:-translate-y-2 hover:scale-105 duration-300 sm:h-32 sm:w-32 lg:h-60 lg:w-60"
                         data-aos="zoom-in"
                         data-aos-delay={index * 100}
                     >
-                        <div className="text-5xl mb-3 animate-bounce-once hover:animate-spin-slow">
+                        <div className="text-7xl mb-3 animate-bounce-once hover:animate-spin-slow">
                             {skill.icon}
                         </div>
                         <p className="text-gray-700 font-semibold">{skill.name}</p>

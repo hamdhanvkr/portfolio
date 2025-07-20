@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import 'aos/dist/aos.css';
@@ -13,6 +13,25 @@ function App() {
 
 	useState(() => {
 		AOS.init({ duration: 1000 });
+	}, []);
+
+	useEffect(() => {
+		window.history.scrollRestoration = 'manual';
+
+		const saveScrollPosition = () => {
+			localStorage.setItem('scrollY', window.scrollY);
+		};
+
+		window.addEventListener('beforeunload', saveScrollPosition);
+
+		const scrollY = localStorage.getItem('scrollY');
+		if (scrollY) {
+			window.scrollTo(0, parseInt(scrollY));
+		}
+
+		return () => {
+			window.removeEventListener('beforeunload', saveScrollPosition);
+		};
 	}, []);
 
 	return (

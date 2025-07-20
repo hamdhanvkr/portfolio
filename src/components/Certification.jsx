@@ -45,7 +45,7 @@ function Certification() {
             id="certification"
             className="min-h-screen py-16 px-6 lg:px-24"
         >
-            <h2 className="text-2xl font-bold text-center mb-20" data-aos="fade-down">
+            <h2 className="text-2xl font-bold text-center mb-20 lg:text-3xl" data-aos="fade-down">
                 Certification
             </h2>
 

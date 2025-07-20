@@ -35,7 +35,7 @@ function Contact() {
       className="min-h-screen  py-16"
     >
       <div className="container mx-auto px-6 lg:px-24">
-        <h2 className="text-2xl font-bold text-center mb-12" data-aos="fade-down">
+        <h2 className="text-2xl font-bold text-center mb-12 lg:text-3xl" data-aos="fade-down">
           Contact Me
         </h2>
 
@@ -62,11 +62,11 @@ function Contact() {
 
         {/* Programmer Quote */}
         <div className="mt-24 text-center px-6" data-aos="fade-up" data-aos-delay="300">
-          <div className="inline-block bg-white px-6 py-4 rounded-xl shadow-lg max-w-2xl mx-auto">
-            <p className="text-lg italic text-gray-700">
+          <div className="inline-block border-2 border-blue-500  px-6 py-4 rounded-xl shadow-lg max-w-2xl mx-auto">
+            <p className="text-lg italic text-gray-700 font-bold">
               SELECT * FROM success WHERE motivation = 'High';
             </p>
-            <p className="mt-2 text-sm text-gray-500">-- Passion drives progress --</p>
+            <p className="mt-2 text-lg text-end text-gray-500 font-medium">Passion drives progress</p>
           </div>
         </div>
       </div>

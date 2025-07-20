@@ -36,7 +36,7 @@ function Project() {
 			id="projects"
 			className="min-h-screen py-16 px-6 lg:px-24"
 		>
-			<h2 className="text-2xl font-bold text-center mb-12" data-aos="fade-down">
+			<h2 className="text-2xl font-bold text-center mb-12 lg:text-3xl" data-aos="fade-down">
 				My Projects
 			</h2>
 
