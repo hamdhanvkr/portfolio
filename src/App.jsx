@@ -8,6 +8,7 @@ import Skill from './components/Skill'
 import Project from './components/Project';
 import Contact from './components/Contact';
 import Certification from './components/Certification';
+import Experiance from './components/Experiance';
 
 function App() {
 
@@ -50,6 +51,9 @@ function App() {
 				</section>
 				<section id="projects">
 					<Project />
+				</section>
+				<section id="experience">
+					<Experiance />
 				</section>
 				<section id="certification">
 					<Certification />

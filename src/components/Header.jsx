@@ -5,7 +5,7 @@ import MobileSidebar from './MobileSidebar';
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const menus = ['Home', 'About', 'Skills', 'Projects', 'Certification', 'Contact'];
+	const menus = ['Home', 'About', 'Skills', 'Projects','Experience', 'Certification', 'Contact'];
 
 	return (
 		<>

@@ -18,6 +18,23 @@ function Home() {
 					<h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3">
 						Hi, I'm <span className="text-blue-600">Mohamed Hamdhan J</span>
 					</h2>
+					<h3 className="text-2xl md:text-2xl text-blue-700 font-semibold mb-5">
+						Web Developer
+					</h3>
+					<ul className="list-disc pl-5 text-gray-700 mb-6 leading-relaxed text-justify space-y-2">
+						<li>Passionate a Developer skilled in building clean, responsive, and scalable web applications.</li>
+						<li>Proficient in <strong>HTML, CSS, Tailwind CSS</strong> for designing intuitive and mobile-friendly UIs.</li>
+						<li>Hands-on experience frontend development using <strong>React.js</strong>.</li>
+						<li>Experience in <strong>customizing and modifying existing frontend templates </strong> client requirements.</li>
+						{/* <li>Backend development knowledge using <strong>Node.js</strong> and <strong>Django (Python)</strong>.</li> */}
+						{/* <li>Strong understanding of database systems like <strong>SQL (MySQL ,MongoDB, PostgreSQL)</strong> for efficient data handling.</li> */}
+						{/* <li>Capable of creating RESTful APIs and integrating frontend with backend smoothly.</li> */}
+						{/* <li>Focused on writing clean, maintainable code and following best practices.</li> */}
+						<li>Actively exploring and learning modern development tools and frameworks.</li>
+					</ul>
+					{/* <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3">
+						Hi, I'm <span className="text-blue-600">Mohamed Hamdhan J</span>
+					</h2>
 					<h3 className="text-xl md:text-2xl text-blue-500 font-semibold mb-5">
 						Full Stack Developer
 					</h3>
@@ -27,7 +44,7 @@ function Home() {
 						high-performance solutions that blend functionality with exceptional design. Adept at responsive design, seamless user interactions,
 						and efficient database management, I am committed to solving complex challenges while staying ahead of the latest trends in
 						web development and digital innovation.
-					</p>
+					</p> */}
 					<a
 						href={resumePDF}
 						download="Mohamed_Hamdhan_Resume"

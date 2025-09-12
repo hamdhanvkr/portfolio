@@ -1,5 +1,7 @@
 import React from 'react'
-import Photos from '../assets/Me.jpeg'
+// import Photos from '../assets/Me.jpeg'
+import Photos from '../assets/abouts.jpeg'
+
 
 function About() {
     return (
@@ -13,6 +15,26 @@ function About() {
                         className="w-80 h-96 rounded-full object-cover shadow-lg"
                     />
                     <div>
+                        <h2 className="text-2xl font-bold mb-10 lg:text-3xl" data-aos="fade-down">About Me</h2>
+
+                        <ul className="list-disc pl-5 text-gray-700 leading-relaxed text-justify max-w-4xl space-y-3">
+                            <li>
+                                Holds a <strong>Master of Computer Applications (MCA) from Jamal Mohamed College,</strong> 
+                                <p>with strong software development fundamentals.</p>
+                            </li>
+                            <li>
+                                Follows a user-centric design approach to ensure intuitive and accessible applications.
+                            </li>
+                            <li>
+                                Continuously learning and staying up-to-date with the latest technologies and industry trends.
+                            </li>
+                            <li>
+                                Driven by a passion for solving real-world problems through innovative digital solutions.
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* <div>
                         <h2 className="text-2xl font-bold mb-4 lg:text-3xl">About Me</h2>
                         <p className="text-gray-700 leading-relaxed text-justify max-w-4xl">
                             I am a passionate Full Stack Developer with a strong foundation in both frontend and backend development, dedicated to crafting dynamic and scalable web applications. I hold a Master of Computer Applications (MCA) degree from Jamal Mohamed College, which has equipped me with in-depth knowledge of software development principles and emerging technologies.
@@ -21,7 +43,7 @@ function About() {
                             <br /><br />
                             I constantly stay updated with the latest industry trends and technologies to deliver efficient, robust, and future-ready solutions. Passionate about problem-solving and digital innovation, I strive to create impactful and user-friendly digital experiences that drive value and growth.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

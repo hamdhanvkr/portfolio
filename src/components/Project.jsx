@@ -44,9 +44,7 @@ function Project() {
 				{projects.map((project, index) => (
 					<div
 						key={index}
-						className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col"
-						data-aos="fade-up"
-						data-aos-delay={index * 200}
+						className="bg-white rounded-xl shadow-md hover:shadow-xl transition-transform duration-500 ease-in-out hover:-translate-y-10 flex flex-col"
 					>
 						<img
 							src={project.image}
@@ -62,7 +60,7 @@ function Project() {
 									{project.description}
 								</p>
 							</div>
-							<div className="mt-6 flex justify-end">
+							{/* <div className="mt-6 flex justify-end">
 								<a
 									href={project.link}
 									target="_blank"
@@ -71,7 +69,7 @@ function Project() {
 								>
 									View Project
 								</a>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				))}
