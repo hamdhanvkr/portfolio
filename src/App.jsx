@@ -1,69 +1,107 @@
-import React, { useEffect,useState } from 'react';
-import Header from './components/Header';
-import Home from './components/Home';
+import React, { useEffect, useState } from 'react';
+import TopBar from './pages/TopBar';
+import Home from './pages/Home';
+import { motion } from "framer-motion";
+import About from './pages/About';
+import Skill from './pages/Skill';
+import Project from './pages/Project';
+import Contact from './pages/Contact';
+import Certification from './pages/Certification';
+import Experience from './pages/Experience';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import About from './components/About';
-import Skill from './components/Skill'
-import Project from './components/Project';
-import Contact from './components/Contact';
-import Certification from './components/Certification';
-import Experiance from './components/Experiance';
 
 function App() {
 
-	useState(() => {
-		AOS.init({ duration: 1000 });
+	useEffect(() => {
+		AOS.init({ duration: 1000, once: true, offset: 50 });
 	}, []);
 
 	useEffect(() => {
 		window.history.scrollRestoration = 'manual';
-
 		const saveScrollPosition = () => {
 			localStorage.setItem('scrollY', window.scrollY);
 		};
-
 		window.addEventListener('beforeunload', saveScrollPosition);
-
 		const scrollY = localStorage.getItem('scrollY');
 		if (scrollY) {
 			window.scrollTo(0, parseInt(scrollY));
 		}
-
 		return () => {
 			window.removeEventListener('beforeunload', saveScrollPosition);
 		};
 	}, []);
 
+	const itemVariants = {
+		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+		hidden: { opacity: 0, y: 20 },
+	};
+
 	return (
 		<>
-			<Header />
-			{/* space-y-24 */}
-			<div className="bg-gradient-to-br from-blue-200 via-gray-200 to-blue-300 pt-10">
-				<section id="home">
+			<TopBar />
+			<div className="bg-white text-gray-800 min-h-screen">
+
+				<section id="home" className='py-24 mx-auto px-6 lg:px-12'>
 					<Home />
 				</section>
-				<section id="about">
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						<span className="text-blue-700">About </span>Me
+					</h2>
+				</motion.div>
+				<section id="about" className="py-24 mx-auto px-6 lg:px-8">
 					<About />
 				</section>
-				<section id="skills">
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						My<span className="text-blue-700"> Skill</span>
+					</h2>
+				</motion.div>
+				<section id="skills" className="py-24 mx-auto px-6 lg:px-8">
 					<Skill />
 				</section>
-				<section id="projects">
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						Featured<span className="text-blue-700"> Projects</span>
+					</h2>
+				</motion.div>
+				<section id="projects" className="py-24 mx-auto px-6 lg:px-8">
 					<Project />
 				</section>
-				<section id="experience">
-					<Experiance />
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						My<span className="text-blue-700"> Work Experience</span>
+					</h2>
+				</motion.div>
+				<section id="experience" className="py-24 mx-auto px-6 lg:px-8">
+					<Experience />
 				</section>
-				<section id="certification">
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						Certification &<span className="text-blue-700"> Awards</span>
+					</h2>
+				</motion.div>
+				<section id="certification" className="py-24 mx-auto px-6 lg:px-8">
 					<Certification />
 				</section>
-				<section id="contact">
+
+				<motion.div variants={itemVariants}>
+					<h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight text-center">
+						Let's<span className="text-blue-700"> Connect</span>
+					</h2>
+				</motion.div>
+				<section id="contact" className="py-24 mx-auto px-6 lg:px-8">
 					<Contact />
 				</section>
 			</div>
 		</>
-	);
+	)
 }
 
 export default App;
