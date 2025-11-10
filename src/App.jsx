@@ -42,7 +42,7 @@ function App() {
 			<TopBar />
 			<div className="bg-white text-gray-800 min-h-screen">
 
-				<section id="home" className='py-24 mx-auto px-6 lg:px-12'>
+				<section id="home" className='py-24 mx-auto px-6 lg:px-20'>
 					<Home />
 				</section>
 
@@ -51,7 +51,7 @@ function App() {
 						<span className="text-blue-700">About </span>Me
 					</h2>
 				</motion.div>
-				<section id="about" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="about" className="py-24 mx-auto px-6 lg:px-20">
 					<About />
 				</section>
 
@@ -60,7 +60,7 @@ function App() {
 						My<span className="text-blue-700"> Skill</span>
 					</h2>
 				</motion.div>
-				<section id="skills" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="skills" className="py-24 mx-auto px-6 lg:px-20">
 					<Skill />
 				</section>
 
@@ -69,7 +69,7 @@ function App() {
 						Featured<span className="text-blue-700"> Projects</span>
 					</h2>
 				</motion.div>
-				<section id="projects" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="projects" className="py-24 mx-auto px-6 lg:px-20">
 					<Project />
 				</section>
 
@@ -78,7 +78,7 @@ function App() {
 						My<span className="text-blue-700"> Work Experience</span>
 					</h2>
 				</motion.div>
-				<section id="experience" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="experience" className="py-24 mx-auto px-6 lg:px-20">
 					<Experience />
 				</section>
 
@@ -87,7 +87,7 @@ function App() {
 						Certification &<span className="text-blue-700"> Awards</span>
 					</h2>
 				</motion.div>
-				<section id="certification" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="certification" className="py-24 mx-auto px-6 lg:px-20">
 					<Certification />
 				</section>
 
@@ -96,7 +96,7 @@ function App() {
 						Let's<span className="text-blue-700"> Connect</span>
 					</h2>
 				</motion.div>
-				<section id="contact" className="py-24 mx-auto px-6 lg:px-8">
+				<section id="contact" className="py-24 mx-auto px-6 lg:px-20">
 					<Contact />
 				</section>
 			</div>
