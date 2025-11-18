@@ -9,13 +9,13 @@ import Threats from '../assets/ADVANCE THREATS.jpeg';
 
 const Certificate = [
     {
-        title: "MySQL Proficiency",
+        title: "MySQL",
         description: "Demonstrated proficiency in MySQL database design, querying, and data manipulation techniques, with hands-on experience in relational database management.",
         image: Sql,
         link: "https://learnzconnect.com/certificates/CERT-2025-6ac6673c-e99e-4dee-84b5-2c1afc75fae2",
     },
     {
-        title: "Python for Data Analytics",
+        title: "Python",
         description: "Certified by SA Career Development Centre, with a strong foundation in data analytics using Python. Gained practical experience Pandas, NumPy, and data visualization using Matplotlib.",
         image: Py,
         link: "#"
@@ -76,9 +76,9 @@ function Certification() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
+                    {/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
                         Proof of Competence
-                    </h3>
+                    </h3> */}
                     <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                         Verification of specialized knowledge across key development and security domains.
                     </p>
@@ -89,7 +89,7 @@ function Certification() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8"
+                    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {Certificate.map((cert, index) => (
                         <motion.div
@@ -101,7 +101,7 @@ function Certification() {
                                 <img
                                     src={cert.image}
                                     alt={cert.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                                    className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-[1.05]"
                                 />
                                 <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
                             </div>

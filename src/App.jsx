@@ -51,7 +51,7 @@ function App() {
 						<span className="text-blue-700">About </span>Me
 					</h2>
 				</motion.div>
-				<section id="about" className="py-24 mx-auto px-6 lg:px-20">
+				<section id="about" className="py-28 mx-auto px-6 lg:px-20">
 					<About />
 				</section>
 
@@ -60,7 +60,7 @@ function App() {
 						My<span className="text-blue-700"> Skill</span>
 					</h2>
 				</motion.div>
-				<section id="skills" className="py-24 mx-auto px-6 lg:px-20">
+				<section id="skills" className="py-10 mx-auto px-6 lg:px-20">
 					<Skill />
 				</section>
 
@@ -99,6 +99,11 @@ function App() {
 				<section id="contact" className="py-24 mx-auto px-6 lg:px-20">
 					<Contact />
 				</section>
+
+				<footer className="text-sm bg-white py-6 font-bold lg:text-lg text-center text-gray-600 sm:">
+					© {new Date().getFullYear()} Mohamed Hamdhan. All Rights Reserved.
+				</footer>
+
 			</div>
 		</>
 	)

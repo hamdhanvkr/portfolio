@@ -38,7 +38,7 @@ const projects = [
 		image: project2Img,
 		link: '#',
 		github: '#',
-		techStack: ['Tailwind', 'JavaScript', 'Node', 'MySQL'],
+		techStack: ['React','Tailwind CSS', 'Node', 'MongoDB'],
 	},
 	{
 		title: 'AL Muhmin Trust Management',
@@ -90,12 +90,12 @@ function Project() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-16"
 				>
-					<h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
+					{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
 						My Portfolio
 					</h3>
 					<p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
 						High-impact, real-world solutions developed using modern frontend technologies.
-					</p>
+					</p> */}
 				</motion.div>
 
 
@@ -105,7 +105,8 @@ function Project() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, amount: 0.2 }}
-					className="grid md:grid-cols-2 lg:grid-cols-2 gap-10"
+					className="grid md:grid-cols-2 lg:grid-cols-2 
+					gap-10"
 				>
 					{projects.map((project, index) => (
 						<motion.div
@@ -171,9 +172,9 @@ function Project() {
 				</motion.div>
 
 				{/* Conclusion Line */}
-				<p className="mt-20 text-center text-lg text-gray-600 font-medium">
+				{/* <p className="mt-20 text-center text-lg text-gray-600 font-medium">
 					Ready to collaborate? <a href="#contact" className="text-blue-600 font-semibold underline hover:text-blue-800 transition duration-300">Get in touch.</a>
-				</p>
+				</p> */}
 
 			</div>
 		</section>

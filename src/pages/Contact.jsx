@@ -64,16 +64,16 @@ function Contact() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-16"
 				>
-					<h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
+					{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
 						Get In Touch
 					</h3>
 					<p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
 						Whether you have a project in mind, a question, or just want to say hi, I'd love to hear from you.
-					</p>
+					</p> */}
 				</motion.div>
 
-				<div className="lg:grid lg:grid-cols-2 gap-10">
-					<motion.div
+				<div className="lg:grid lg:grid-cols-1 gap-10">
+					{/* <motion.div
 						variants={sectionVariants}
 						initial="hidden"
 						whileInView="visible"
@@ -127,7 +127,7 @@ function Contact() {
 								Send Message
 							</button>
 						</form>
-					</motion.div>
+					</motion.div> */}
 
 					<motion.div
 						variants={sectionVariants}
@@ -136,7 +136,7 @@ function Contact() {
 						viewport={{ once: true, amount: 0.3 }}
 						className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 flex flex-col justify-between"
 					>
-						<h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+						<h3 className="text-2xl font-bold text-gray-900 mb-6 flex justify-center gap-3">
 							<FaPhoneAlt className="text-blue-600" /> Reach Out Directly
 						</h3>
 						<div className="space-y-6">
@@ -169,14 +169,14 @@ function Contact() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.5 }}
 					transition={{ duration: 0.6, delay: 0.3 }}
-					className="mt-12 text-center"
+					className="mt-40 text-center"
 				>
 					<div className="inline-block border-2 border-blue-400 bg-white px-8 py-5 rounded-2xl shadow-xl max-w-2xl mx-auto">
 						<p className="text-xl italic text-gray-700 font-semibold">
-							"The only way to do great work is to love what you do."
+							SELECT * FROM success WHERE motivation = 'High';
 						</p>
 						<p className="mt-3 text-lg text-end text-gray-500 font-medium">
-							— Steve Jobs
+							Passion drives progress
 						</p>
 					</div>
 				</motion.div>

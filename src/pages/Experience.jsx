@@ -7,10 +7,10 @@ const experiance = [
 	{
 		title: 'Fabs ERP',
 		company: 'Fabs Infotech, Dubai',
-		duration: 'Jan 2022 - Jun 2022 (6 Months)',
-		technologies: ['Python', 'Django', 'PostgreSQL', 'JavaScript'],
+		duration: 'Feb 2025 - Jul 2025 (6 Months)',
+		technologies: ['Python', 'Django', 'PostgreSQL'],
 		description:
-			'During my internship, I contributed to the development of an ERP system using Python, Django, and PostgreSQL. I focused on customizing templates, enhancing existing modules, and improving performance based on client requirements. This experience significantly strengthened my full-stack development skills and understanding of enterprise-level systems.',
+			'During my internship at Fabs Infotech, Dubai, I contributed to the development of an ERP system using Python, Django, and PostgreSQL. I worked on customizing templates, enhancing modules, and improving performance based on client requirements, which strengthened my full-stack development skills.',
 		image: Intern,
 	},
 ];
@@ -68,9 +68,9 @@ function Experiance() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-16"
 				>
-					<h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
+					{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
 						Professional Journey
-					</h3>
+					</h3> */}
 					<p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
 						Key roles and internships that shaped my technical skills and professional approach.
 					</p>
@@ -93,7 +93,7 @@ function Experiance() {
 								<img
 									src={exp.image}
 									alt={exp.title}
-									className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+									className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-100"
 								/>
 								<div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
 							</div>

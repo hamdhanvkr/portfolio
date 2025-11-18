@@ -1,15 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaReact, FaGithub } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaReact, FaGithub,FaPython } from 'react-icons/fa';
+import { SiTailwindcss, SiMysql ,SiPostgresql} from 'react-icons/si';
 
 const skills = [
     { name: 'HTML5', icon: <FaHtml5 className="text-orange-600" />, level: 'Advanced' },
     { name: 'CSS3', icon: <FaCss3Alt className="text-blue-600" />, level: 'Advanced' },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-sky-500" />, level: 'Expert' },
-    { name: 'JavaScript (ES6+)', icon: <FaJs className="text-yellow-500" />, level: 'Advanced' },
+    { name: 'JavaScript', icon: <FaJs className="text-yellow-500" />, level: 'Advanced' },
     { name: 'React.js', icon: <FaReact className="text-cyan-500" />, level: 'Expert' },
     { name: 'Node.js', icon: <FaNodeJs className="text-green-600" />, level: 'Intermediate' },
+    { 
+        name: 'Python Django', 
+        icon: <FaPython className="text-green-700" />,
+        level: 'Advanced' 
+    },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700" />, level: 'Intermediate' },
     { name: 'SQL', icon: <SiMysql className="text-indigo-600" />, level: 'Intermediate' },
     { name: 'GitHub/Git', icon: <FaGithub className="text-gray-700" />, level: 'Advanced' },
 ];
@@ -50,15 +56,8 @@ function Skill() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <p className="text-sm uppercase tracking-[5px] font-semibold text-indigo-500 mb-2">
-                        My Core Strengths
-                    </p>
-                    <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                            Professional
-                        </span> Toolkit
-                    </h2>
-                    <p className="mt-4 text-lg text-gray-600 mx-auto">
+                   
+                    <p className="text-lg text-gray-600 mx-auto">
                         A curated list of technologies I use to develop and deliver robust applications.
                     </p>
                 </motion.div>
@@ -70,7 +69,7 @@ function Skill() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                     // Adjusted grid for a less formal spread
-                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12"
+                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12"
                 >
                     {skills.map((skill, index) => (
                         <motion.div
@@ -85,7 +84,7 @@ function Skill() {
                                 relative overflow-hidden"
                         >
                             {/* Accent Circle for Icon */}
-                            <div className="absolute top-0 right-0 w-10 h-10 lg:w-20 lg:h-20 rounded-bl-[2rem] bg-indigo-100 opacity-30"></div>
+                            <div className="absolute top-0 right-0 w-10 h-10 lg:w-20 lg:h-20 rounded-bl-[6rem] bg-indigo-100 opacity-30"></div>
 
                             {/* Icon - Prominently displayed */}
                             <div className="text-5xl lg:text-7xl p-4 rounded-full bg-white 
@@ -96,19 +95,11 @@ function Skill() {
                             {/* Skill Name */}
                             <p className="text-md lg:text-xl font-bold text-gray-900 mb-5">{skill.name}</p>
 
-                            {/* Level Badge - Elevated and clear */}
-                            <div className={`text-sm font-semibold px-4 py-1 rounded-full 
-                                ${skill.level === 'Expert' ? 'bg-indigo-500 text-white shadow-md' : 'bg-gray-200 text-gray-700'}`}>
-                                {skill.level}
-                            </div>
+                           
                         </motion.div>
                     ))}
                 </motion.div>
 
-                {/* Subtle Call to Action */}
-                <p className="mt-20 text-center text-gray-500">
-                    Ready to build something innovative?
-                </p>
             </div>
         </section>
     );

@@ -6,32 +6,33 @@ import resumePDF from "../assets/CV.pdf";
 const Home = () => {
 
 	return (
-		<div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-16 min-h-screen">
+		<div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-16 my-14">
 
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7, ease: "easeOut" }}
-				className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
+				className="w-full lg:w-full space-y-6 text-center lg:text-left"
 			>
-				<h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold">
+				{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold">
 					Welcome to My Portfolio
-				</h3>
+				</h3> */}
 
-				<h1 className="text-5xl md:text-5xl font-extrabold leading-tight text-gray-900">
+				<h1 className="text-2xl md:text-4xl lg:text-4xl font-extrabold leading-tight text-gray-900">
 					Hi, I’m <span className="text-blue-700">Mohamed Hamdhan J</span>
 				</h1>
 
 				<h2 className="text-2xl md:text-3xl font-semibold text-gray-600">
-					Frontend Web Developer
+					Web Developer
 				</h2>
 
-				<p className="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-					I specialize in crafting modern, responsive, and high-performing web
-					applications using <strong>React.js</strong> and{" "}
-					<strong>Tailwind CSS</strong>. My focus is on clean code,
-					scalability, and delivering seamless user experiences.
-				</p>
+				<ul className="text-md text-justify lg:text-lg text-gray-600 leading-relaxed list-disc list-inside space-y-5 mt-2">
+					<li>Passionate Developer skilled in building clean, responsive, and scalable web applications.</li>
+					<li>Proficient in <strong>HTML, CSS, Tailwind CSS</strong> for designing intuitive and mobile-friendly UIs.</li>
+					<li>Hands-on experience in frontend development using <strong>React.js and Python Django.</strong></li>
+					<li>Experience in <strong>customizing and modifying existing frontend templates</strong>to meet client requirements.</li>
+					<li>Actively exploring and learning modern development tools and frameworks.</li>
+				</ul>
 
 				<div className="flex sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
 					<a
@@ -50,7 +51,7 @@ const Home = () => {
 				</div>
 
 				{/* Skills Summary */}
-				<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-gray-700 pt-10">
+				{/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-gray-700 pt-10">
 					<div className="bg-white rounded-lg shadow p-3 text-center hover:shadow-md transition">
 						<p className="font-semibold text-blue-600">React.js</p>
 						<p className="text-gray-500">Frontend</p>
@@ -67,9 +68,9 @@ const Home = () => {
 						<p className="font-semibold text-blue-600">Node.js</p>
 						<p className="text-gray-500">Express</p>
 					</div>
-				</div>
+				</div> */}
 			</motion.div>
- 
+
 			<motion.div
 				initial={{ opacity: 0, scale: 0.95 }}
 				animate={{ opacity: 1, scale: 1 }}
@@ -83,9 +84,9 @@ const Home = () => {
 						alt="Mohamed Hamdhan"
 						className="relative w-72 h-96 md:w-96 md:h-full object-cover rounded-2xl lg:shadow-xl border border-gray-200 group-hover:scale-105 transition duration-500"
 					/>
-					<div className="absolute bottom-4 right-4 bg-white px-3 py-2 rounded-lg shadow-lg text-sm font-semibold text-blue-700 border border-blue-100">
+					{/* <div className="absolute bottom-4 right-4 bg-white px-3 py-2 rounded-lg shadow-lg text-sm font-semibold text-blue-700 border border-blue-100">
 						Available for Work
-					</div>
+					</div> */}
 				</div>
 			</motion.div>
 		</div>

@@ -36,14 +36,14 @@ const About = () => {
                     <img
                         src={aboutsImage}
                         alt="About Mohamed Hamdhan"
-                        className="relative w-72 h-96 lg:w-96 lg:h-[600px] object-cover rounded-3xl border-4 border-white transform group-hover:scale-[1.02] transition duration-500"
+                        className="relative w-72 h-96 lg:w-96 lg:h-[500px] object-cover rounded-3xl border-4 border-white transform group-hover:scale-[1.02] transition duration-500"
                     />
                 </div>
             </motion.div>
 
             {/* Content Section */}
             <div className="w-full lg:w-2/3 space-y-8 text-center lg:text-left">
-                <motion.div variants={itemVariants}>
+                {/* <motion.div variants={itemVariants}>
                     <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
                         Who I Am
                     </h3>
@@ -57,40 +57,29 @@ const About = () => {
                     className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0"
                 >
                     I specialize in building modern, responsive, and high-performing web applications. My journey is driven by a commitment to user-centric design and solving real-world problems with innovative digital solutions.
-                </motion.p>
+                </motion.p> */}
 
                 <motion.div variants={itemVariants} className="pt-0">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-6">Key Highlights:</h4>
-                    <ul className="text-gray-700 leading-loose max-w-2xl mx-auto lg:mx-0 space-y-3">
-                        <li className="flex items-start">
-                            <span className="text-blue-600 mr-3 text-2xl">•</span>
-                            <span>
-                                Holds a Master of Computer Applications (MCA) from Jamal Mohamed College, providing a robust foundation in software development principles.
-                            </span>
-                        </li>
-                        <li className="flex items-start">
-                            <span className="text-blue-600 mr-3 text-2xl">•</span>
-                            <span>
-                                Follows a user-centric design approach to ensure all applications are intuitive, accessible, and deliver a seamless user experience.
-                            </span>
-                        </li>
-                        <li className="flex items-start">
-                            <span className="text-blue-600 mr-3 text-2xl">•</span>
-                            <span>
-                                Continuously learning and adapting to the latest frontend technologies and industry best practices for future-ready solutions.
-                            </span>
-                        </li>
+                    <ul className="text-md text-justify lg:text-lg text-gray-600 leading-relaxed list-disc list-inside space-y-5 mt-2">
+                        <li>Holds a <strong>Master of Computer Applications (MCA) from Jamal Mohamed College in Trichy.</strong></li>
+                        <li>Follows a user centric design approach to ensure intuitive and accessible applications.</li>
+                        <li>Continuously learning and staying up to date with the latest technologies and industry trends.</li>
+                        <li>Driven by a passion for solving real-world problems through innovative digital solutions.</li>
+                        <li>Strong collaborative team player with experience working in teams to build efficient applications.</li>
+                        <li>Successfully contributed to and completed multiple team projects with effective coordination.</li>
                     </ul>
+
                 </motion.div>
 
-                <motion.div variants={itemVariants} className="pt-0">
+
+                {/* <motion.div variants={itemVariants} className="pt-0">
                     <a
                         href="#contact"
-                        className="inline-block px-8 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition duration-300"
+                        className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition duration-300"
                     >
                         Let's Connect
                     </a>
-                </motion.div>
+                </motion.div> */}
             </div>
         </motion.div>
     )

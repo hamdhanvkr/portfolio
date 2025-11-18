@@ -22,7 +22,7 @@ const Header = () => {
 				className="w-full bg-white shadow-lg fixed top-0 left-0 z-50 transition-all duration-300 border-b border-gray-100"
 				role="banner"
 			>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+				<div className="mx-auto px-4 sm:px-6 lg:px-20 py-3 flex justify-between items-center">
 					<a href="#home" aria-label="Go to Home" className="text-2xl font-bold tracking-tight text-gray-900 transition duration-300 hover:text-blue-600">
 						Hamdhan <span className="text-blue-600">Portfolio</span>
 					</a>
