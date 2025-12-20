@@ -1,188 +1,143 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaComments } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaTerminal } from 'react-icons/fa';
 
 const contactDetails = [
-	{
-		icon: <FaLinkedin className="text-blue-600 text-2xl" />,
-		label: 'LinkedIn',
-		value: 'linkedin.com/in/mohamedhamdhan/',
-		link: 'https://www.linkedin.com/in/mohamedhamdhan/',
-	},
-	{
-		icon: <FaGithub className="text-gray-700 text-2xl" />,
-		label: 'GitHub',
-		value: 'github.com/hamdhanvkr',
-		link: 'https://github.com/hamdhanvkr',
-	},
-	{
-		icon: <FaEnvelope className="text-red-500 text-2xl" />,
-		label: 'Email',
-		value: 'hamdhanvkr@gmail.com',
-		link: 'mailto:hamdhanvkr@gmail.com',
-	},
-	{
-		icon: <FaPhoneAlt className="text-green-600 text-2xl" />,
-		label: 'Phone',
-		value: '+91 9629601141',
-		link: 'tel:+919629601141',
-	},
-	{
-		icon: <FaMapMarkerAlt className="text-purple-600 text-2xl" />,
-		label: 'Location',
-		value: 'Tiruchirappalli, Tamil Nadu, India',
-		link: '#',
-	},
+    {
+        icon: <FaLinkedin />,
+        label: 'LinkedIn',
+        value: 'linkedin.com/in/mohamedhamdhan/',
+        link: 'https://www.linkedin.com/in/mohamedhamdhan/',
+        color: 'text-blue-600',
+        bg: 'bg-blue-50'
+    },
+    {
+        icon: <FaGithub />,
+        label: 'GitHub',
+        value: 'github.com/hamdhanvkr',
+        link: 'https://github.com/hamdhanvkr',
+        color: 'text-gray-900',
+        bg: 'bg-gray-100'
+    },
+    {
+        icon: <FaEnvelope />,
+        label: 'Email',
+        value: 'hamdhanvkr@gmail.com',
+        link: 'mailto:hamdhanvkr@gmail.com',
+        color: 'text-red-500',
+        bg: 'bg-red-50'
+    },
+    {
+        icon: <FaPhoneAlt />,
+        label: 'Phone',
+        value: '+91 9629601141',
+        link: 'tel:+919629601141',
+        color: 'text-green-600',
+        bg: 'bg-green-50'
+    },
+    {
+        icon: <FaMapMarkerAlt />,
+        label: 'Location',
+        value: 'Tiruchirappalli, Tamil Nadu, India',
+        link: '#',
+        color: 'text-purple-600',
+        bg: 'bg-purple-50'
+    },
 ];
 
-const sectionVariants = {
-	hidden: { opacity: 0, y: 50 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.8, ease: 'easeOut' },
-	},
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1 },
+    },
 };
 
 const itemVariants = {
-	hidden: { opacity: 0, x: -20 },
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: { duration: 0.5, ease: 'easeOut' },
-	},
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: 'easeOut' },
+    },
 };
 
 function Contact() {
-	return (
-		<section id="contact" className="min-h-screen relative">
-			<div>
-				<motion.div
-					initial={{ opacity: 0, y: -20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-16"
-				>
-					{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
-						Get In Touch
-					</h3>
-					<p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-						Whether you have a project in mind, a question, or just want to say hi, I'd love to hear from you.
-					</p> */}
-				</motion.div>
 
-				<div className="lg:grid lg:grid-cols-1 gap-10">
-					{/* <motion.div
-						variants={sectionVariants}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.3 }}
-						className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 mb-10 lg:mb-0"
-					>
-						<h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-							<FaComments className="text-blue-600" /> Send a Message
-						</h3>
-						<form className="space-y-6">
-							<div>
-								<label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-									Your Name
-								</label>
-								<input
-									type="text"
-									id="name"
-									name="name"
-									placeholder="John Doe"
-									className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
-								/>
-							</div>
-							<div>
-								<label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-									Your Email
-								</label>
-								<input
-									type="email"
-									id="email"
-									name="email"
-									placeholder="john.doe@example.com"
-									className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
-								/>
-							</div>
-							<div>
-								<label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-									Your Message
-								</label>
-								<textarea
-									id="message"
-									name="message"
-									rows="5"
-									placeholder="Tell me about your project or inquiry..."
-									className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
-								></textarea>
-							</div>
-							<button
-								type="submit"
-								className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 lg:text-lg"
-							>
-								Send Message
-							</button>
-						</form>
-					</motion.div> */}
+    return (
+        <section id="contact" className="py-24 bg-white relative overflow-hidden">
 
-					<motion.div
-						variants={sectionVariants}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.3 }}
-						className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 flex flex-col justify-between"
-					>
-						<h3 className="text-2xl font-bold text-gray-900 mb-6 flex justify-center gap-3">
-							<FaPhoneAlt className="text-blue-600" /> Reach Out Directly
-						</h3>
-						<div className="space-y-6">
-							{contactDetails.map((item, index) => (
-								<motion.a
-									key={index}
-									href={item.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									variants={itemVariants}
-									className="flex items-center gap-5 p-4 bg-gray-50 rounded-lg hover:bg-blue-50 hover:shadow-md transition duration-300 group"
-								>
-									<div className="shrink-0 p-3 bg-white rounded-full shadow-inner group-hover:bg-blue-100 transition duration-300">
-										{item.icon}
-									</div>
-									<div className="min-w-0">
-										<p className="text-base font-semibold text-gray-800 group-hover:text-blue-700 transition duration-300">
-											{item.label}
-										</p>
-										<p className="text-gray-600 text-sm break-words">{item.value}</p>
-									</div>
-								</motion.a>
-							))}
-						</div>
-					</motion.div>
-				</div>
+            <div className="max-w-7xl mx-auto relative z-10">
 
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					className="mt-40 text-center"
-				>
-					<div className="inline-block border-2 border-blue-400 bg-white px-8 py-5 rounded-2xl shadow-xl max-w-2xl mx-auto">
-						<p className="text-xl italic text-gray-700 font-semibold">
-							SELECT * FROM success WHERE motivation = 'High';
-						</p>
-						<p className="mt-3 text-lg text-end text-gray-500 font-medium">
-							Passion drives progress
-						</p>
-					</div>
-				</motion.div>
-			</div>
-		</section>
-	);
+                {/* Contact Card */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="bg-white rounded-3xl border border-gray-100 shadow-2xl shadow-blue-900/5 p-4 md:p-12"
+                >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {contactDetails.map((item, index) => (
+                            <motion.a
+                                key={index}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variants={itemVariants}
+                                className="flex items-center gap-5 p-5 rounded-2xl border border-transparent hover:border-blue-100 hover:bg-blue-50/50 transition-all duration-300 group"
+                            >
+                                <div className={`shrink-0 w-12 h-12 flex items-center justify-center rounded-xl ${item.bg} ${item.color} text-xl shadow-sm group-hover:scale-110 transition-transform`}>
+                                    {item.icon}
+                                </div>
+                                <div className="min-w-0">
+                                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">
+                                        {item.label}
+                                    </p>
+                                    <p className="text-gray-900 font-semibold truncate group-hover:text-blue-700 transition-colors">
+                                        {item.value}
+                                    </p>
+                                </div>
+                            </motion.a>
+                        ))}
+                    </div>
+                </motion.div>
+
+                {/* SQL Quote / Motivation */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="mt-6 max-w-2xl mx-auto"
+                >
+                    <div className="relative group">
+                        <div className="relative bg-gray-900 rounded-2xl p-8">
+                            {/* Terminal Header */}
+                            <div className="flex gap-1.5 mb-6">
+                                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                                <FaTerminal className="ml-auto text-gray-600" />
+                            </div>
+
+                            <div className="space-y-4">
+                                <p className="font-mono text-md md:text-xl text-blue-400">
+                                    <span className="text-purple-400">SELECT</span> * <span className="text-purple-400">FROM</span> success
+                                    <br />
+                                    <span className="text-purple-400">WHERE</span> motivation = <span className="text-green-400">'High'</span>;
+                                </p>
+                                <div className="pt-4 border-t border-gray-800 flex justify-between items-center">
+                                    <span className="text-gray-500 font-mono text-sm tracking-tighter">// Result: 1 row returned</span>
+                                    <span className="hidden lg:flex text-gray-300 italic font-medium">Passion drives progress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
+    );
 }
 
 export default Contact;

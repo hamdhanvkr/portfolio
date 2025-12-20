@@ -5,7 +5,6 @@ import project1Img from '../assets/obe1.png';
 import project2Img from '../assets/upvc1.png';
 import project3Img from '../assets/trust1.png';
 
-// Cleaner Badge Mapping
 const techColors = {
     React: 'bg-cyan-100 text-cyan-800 border-cyan-200',
     Node: 'bg-green-100 text-green-800 border-green-200',
@@ -78,21 +77,10 @@ const itemVariants = {
 };
 
 function Project() {
+
     return (
         <section id="projects" className="py-20">
             <div className="container mx-auto">
-                {/* Header Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-                        Featured Projects
-                    </h2>
-                    <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
-                </motion.div>
 
                 {/* Projects Grid */}
                 <motion.div
@@ -100,7 +88,7 @@ function Project() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
                 >
                     {projects.map((project, index) => (
                         <motion.div
@@ -113,7 +101,7 @@ function Project() {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-500"
                                 />
 
                             </div>

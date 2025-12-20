@@ -39,29 +39,11 @@ const About = () => {
                                 alt="Mohamed Hamdhan"
                                 className="w-72 h-96 lg:w-full lg:h-[550px] object-cover rounded-[2.5rem] grayscale-[20%] hover:grayscale-0 transition duration-700"
                             />
-
-                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-blue-50 hidden md:block">
-                                <p className="text-3xl font-black text-blue-600">MCA</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase tracking-tighter">
-                                    Post Graduate
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </motion.div>
 
                 <div className="w-full lg:w-3/5 space-y-8">
-                    <motion.div variants={itemVariants} className="space-y-4">
-                        <h3 className="text-blue-600 font-bold tracking-[0.2em] uppercase text-sm">
-                            Background
-                        </h3>
-                        <h2 className="text-2xl md:text-5xl font-black text-slate-900 leading-tight">
-                            Education &{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                                Philosophy
-                            </span>
-                        </h2>
-                    </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">

@@ -30,19 +30,10 @@ const itemVariants = {
 };
 
 function Skill() {
+
     return (
-        <section id="skills" className="py-24 bg-white">
+        <section id="skills" className="py-12 lg:py-24 bg-white">
             <div className="max-w-6xl mx-auto px-6">
-
-                {/* Section Header */}
-                <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-4">
-                        <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm uppercase tracking-tighter">Skills</span>
-                        Tech Stack
-                    </h2>
-                    <p className="text-slate-500 mt-2 text-sm">Technologies I specialize in for building scalable web applications.</p>
-                </div>
-
                 <div className="space-y-12">
                     {skillCategories.map((category, catIdx) => (
                         <div key={catIdx} className="relative">
@@ -61,20 +52,20 @@ function Skill() {
                                         key={index}
                                         variants={itemVariants}
                                         whileHover={{ scale: 1.02 }}
-                                        className="flex items-center p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:bg-white hover:border-blue-200 hover:shadow-sm transition-all duration-200"
+                                        className="flex items-center p-4 lg:p-6 bg-slate-50/50 border border-slate-100 rounded-xl hover:bg-white hover:border-blue-200 hover:shadow-sm transition-all duration-200"
                                     >
-                                        <div className={`text-2xl ${skill.color} mr-4`}>
+                                        <div className={`text-2xl ${skill.color} mr-4 lg:text-5xl`}>
                                             {skill.icon}
                                         </div>
 
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center mb-1">
-                                                <span className="text-sm font-bold text-slate-700">{skill.name}</span>
+                                                <span className="text-sm lg:text-lg font-bold text-slate-700">{skill.name}</span>
                                                 <span className="text-[10px] font-mono text-slate-400">{skill.level}</span>
                                             </div>
 
                                             {/* Micro-Progress Bar */}
-                                            <div className="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                                            <div className="h-1.5 w-full mt-2 bg-slate-200 rounded-full overflow-hidden">
                                                 <motion.div
                                                     initial={{ width: 0 }}
                                                     whileInView={{ width: skill.level }}

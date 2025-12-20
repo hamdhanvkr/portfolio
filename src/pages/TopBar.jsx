@@ -51,7 +51,7 @@ const TopBar = () => {
                             <a
                                 href={item.href}
                                 key={item.name}
-                                className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-blue-600 rounded-full transition-all duration-300 hover:bg-white hover:shadow-sm"
+                                className="px-5 py-2 text-md font-semibold text-gray-600 hover:text-blue-600 rounded-full transition-all duration-300 hover:bg-white hover:shadow-sm"
                             >
                                 {item.name}
                             </a>
