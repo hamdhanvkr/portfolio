@@ -1,61 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import MobileSidebar from './MobileSidebar';
 
-const Header = () => {
+const TopBar = () => {
 
-	const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-	const navItems = [
-		{ name: 'Home', href: '#home' },
-		{ name: 'About', href: '#about' },
-		{ name: 'Skills', href: '#skills' },
-		{ name: 'Projects', href: '#projects' },
-		{ name: 'Experience', href: '#experience' },
-		{ name: 'Certification', href: '#certification' },
-		{ name: 'Contact', href: '#contact' },
-	];
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-	return (
-		<>
-			<header
-				className="w-full bg-white shadow-lg fixed top-0 left-0 z-50 transition-all duration-300 border-b border-gray-100"
-				role="banner"
-			>
-				<div className="mx-auto px-4 sm:px-6 lg:px-20 py-3 flex justify-between items-center">
-					<a href="#home" aria-label="Go to Home" className="text-2xl font-bold tracking-tight text-gray-900 transition duration-300 hover:text-blue-600">
-						Hamdhan <span className="text-blue-600">Portfolio</span>
-					</a>
+    const navItems = [
+        { name: 'Home', href: '#home' },
+        { name: 'About', href: '#about' },
+        { name: 'Skills', href: '#skills' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'Experience', href: '#experience' },
+        { name: 'Certification', href: '#certification' },
+        { name: 'Contact', href: '#contact' },
+    ];
 
-					<nav className="hidden lg:flex gap-8" aria-label="Primary Navigation">
-						{navItems.map((item) => (
-							<a
-								href={item.href}
-								key={item.name}
-								className="text-lg font-medium text-gray-700 hover:text-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition duration-300 relative group py-1"
-							>
-								{item.name}
-								<span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-							</a>
-						))}
-					</nav>
+    return (
+        <>
+            <header
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+                    ? 'py-3 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm'
+                    : 'py-5 bg-transparent'
+                    }`}
+                role="banner"
+            >
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+                    {/* Logo Section */}
+                    <a
+                        href="#home"
+                        className="group flex items-center gap-1 text-xl font-extrabold tracking-tight text-slate-900"
+                    >
+                        <span className="bg-blue-600 text-white px-2 py-0.5 mr-1 lg:mr-2 rounded-md transition-transform duration-300 group-hover:-rotate-3">H</span>
+                        <span className="hidden sm:block">Hamdhan</span>
+                        <span className="text-blue-600 font-bold ml-0.5">Portfolio</span>
+                    </a>
 
-					<div className="lg:hidden">
-						<button
-							onClick={() => setIsOpen(true)}
-							aria-label="Open main menu"
-							aria-expanded={isOpen}
-							className="p-2 rounded-lg text-blue-600 hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition duration-150"
-						>
-							<Menu className="w-6 h-6" />
-						</button>
-					</div>
-				</div>
-			</header>
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:flex items-center bg-gray-100/50 p-1.5 rounded-full border border-gray-200/50 backdrop-blur-sm" aria-label="Primary Navigation">
+                        {navItems.map((item) => (
+                            <a
+                                href={item.href}
+                                key={item.name}
+                                className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-blue-600 rounded-full transition-all duration-300 hover:bg-white hover:shadow-sm"
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                    </nav>
 
-			{isOpen && <MobileSidebar setIsOpen={setIsOpen} navItems={navItems} />}
-		</>
-	);
+                    {/* CTA / Contact Button */}
+                    <div className="flex items-center gap-4">
+                        <a
+                            href="#contact"
+                            className="hidden md:block px-6 py-2 bg-slate-900 text-white text-sm font-bold rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg shadow-slate-200"
+                        >
+                            Hire Me
+                        </a>
+
+                        {/* Mobile Menu Trigger */}
+                        <div className="lg:hidden">
+                            <button
+                                onClick={() => setIsOpen(true)}
+                                className="p-2.5 rounded-xl bg-gray-100 text-slate-900 hover:bg-blue-50 hover:text-blue-600 transition-all active:scale-95"
+                                aria-label="Open main menu"
+                            >
+                                <Menu className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            {isOpen && <MobileSidebar setIsOpen={setIsOpen} navItems={navItems} />}
+        </>
+    );
 };
 
-export default Header;
+export default TopBar;
