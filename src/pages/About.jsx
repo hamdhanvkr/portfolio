@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GraduationCap, Users, Lightbulb, TrendingUp } from 'lucide-react';
 import aboutsImage from '../assets/abouts.jpeg';
 
 const About = () => {
@@ -8,81 +9,115 @@ const About = () => {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
+            transition: { staggerChildren: 0.2 },
         },
     };
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
     };
 
     return (
-        <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="w-full flex flex-col lg:flex-row items-center justify-between gap-16"
-        >
-            {/* Image Section */}
+        <section id="about" className="py-8 relative overflow-hidden">
+            <div className="absolute top-1/2 right-0 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-50 -z-10" />
+
             <motion.div
-                variants={itemVariants}
-                className="w-full lg:w-1/3 flex justify-center lg:justify-start"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+                className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20"
             >
-                <div className="relative group p-2 bg-white rounded-3xl shadow-2xl transition duration-500 hover:shadow-blue-300/50">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-blue-700 to-transparent opacity-10 blur-xl group-hover:opacity-30 transition duration-500"></div>
-                    <img
-                        src={aboutsImage}
-                        alt="About Mohamed Hamdhan"
-                        className="relative w-72 h-96 lg:w-96 lg:h-[500px] object-cover rounded-3xl border-4 border-white transform group-hover:scale-[1.02] transition duration-500"
-                    />
+                <motion.div variants={itemVariants} className="w-full lg:w-2/5 relative">
+                    <div className="relative group mx-auto lg:mx-0 w-fit">
+                        <div className="absolute -inset-4 bg-gradient-to-br from-blue-600 to-indigo-500 rounded-[3rem] opacity-10 blur-2xl group-hover:opacity-20 transition duration-500"></div>
+
+                        <div className="relative p-3 bg-white rounded-[3rem] shadow-2xl border border-slate-100">
+                            <img
+                                src={aboutsImage}
+                                alt="Mohamed Hamdhan"
+                                className="w-72 h-96 lg:w-full lg:h-[550px] object-cover rounded-[2.5rem] grayscale-[20%] hover:grayscale-0 transition duration-700"
+                            />
+
+                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-blue-50 hidden md:block">
+                                <p className="text-3xl font-black text-blue-600">MCA</p>
+                                <p className="text-xs font-bold text-slate-500 uppercase tracking-tighter">
+                                    Post Graduate
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <div className="w-full lg:w-3/5 space-y-8">
+                    <motion.div variants={itemVariants} className="space-y-4">
+                        <h3 className="text-blue-600 font-bold tracking-[0.2em] uppercase text-sm">
+                            Background
+                        </h3>
+                        <h2 className="text-2xl md:text-5xl font-black text-slate-900 leading-tight">
+                            Education &{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                                Philosophy
+                            </span>
+                        </h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <GraduationCap className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Holds a <strong className="text-slate-900">Master of Computer Applications (MCA)</strong> from Jamal Mohamed College in Trichy.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <Lightbulb className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Follows a <strong className="text-slate-900">user-centric design</strong> approach to ensure intuitive and accessible applications.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <TrendingUp className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Continuously learning and staying <strong className="text-slate-900">up to date</strong> with latest technologies and industry trends.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <Users className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Strong <strong className="text-slate-900">collaborative team player</strong> with experience in building efficient applications.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    <motion.div variants={itemVariants} className="space-y-4 pt-4 border-t border-slate-100">
+                        <div className="flex items-start gap-4">
+                            <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 shrink-0">
+                                <div className="h-2 w-2 rounded-full bg-blue-600"></div>
+                            </div>
+                            <p className="text-slate-600 text-lg">
+                                Driven by a passion for solving real-world problems through{' '}
+                                <span className="text-slate-900 font-medium">innovative digital solutions</span>.
+                            </p>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                            <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 shrink-0">
+                                <div className="h-2 w-2 rounded-full bg-blue-600"></div>
+                            </div>
+                            <p className="text-slate-600 text-lg">
+                                Successfully contributed to and completed{' '}
+                                <span className="text-slate-900 font-medium">multiple team projects</span> with effective coordination.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </motion.div>
-
-            {/* Content Section */}
-            <div className="w-full lg:w-2/3 space-y-8 text-center lg:text-left">
-                {/* <motion.div variants={itemVariants}>
-                    <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
-                        Who I Am
-                    </h3>
-                    <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-                        A Passionate <span className="text-blue-700">Frontend Developer</span>
-                    </h2>
-                </motion.div>
-
-                <motion.p
-                    variants={itemVariants}
-                    className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                >
-                    I specialize in building modern, responsive, and high-performing web applications. My journey is driven by a commitment to user-centric design and solving real-world problems with innovative digital solutions.
-                </motion.p> */}
-
-                <motion.div variants={itemVariants} className="pt-0">
-                    <ul className="text-md text-justify lg:text-lg text-gray-600 leading-relaxed list-disc list-inside space-y-5 mt-2">
-                        <li>Holds a <strong>Master of Computer Applications (MCA) from Jamal Mohamed College in Trichy.</strong></li>
-                        <li>Follows a user centric design approach to ensure intuitive and accessible applications.</li>
-                        <li>Continuously learning and staying up to date with the latest technologies and industry trends.</li>
-                        <li>Driven by a passion for solving real-world problems through innovative digital solutions.</li>
-                        <li>Strong collaborative team player with experience working in teams to build efficient applications.</li>
-                        <li>Successfully contributed to and completed multiple team projects with effective coordination.</li>
-                    </ul>
-
-                </motion.div>
-
-
-                {/* <motion.div variants={itemVariants} className="pt-0">
-                    <a
-                        href="#contact"
-                        className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition duration-300"
-                    >
-                        Let's Connect
-                    </a>
-                </motion.div> */}
-            </div>
-        </motion.div>
-    )
-}
+        </section>
+    );
+};
 
 export default About;
