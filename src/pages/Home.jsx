@@ -1,96 +1,124 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ArrowRight, Download, Github } from "lucide-react";
 import myPhoto from "../assets/Me1.jpg";
 import resumePDF from "../assets/CV.pdf";
 
 const Home = () => {
 
-	return (
-		<div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-16 my-14">
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
 
-			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.7, ease: "easeOut" }}
-				className="w-full lg:w-full space-y-6 text-center lg:text-left"
-			>
-				{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold">
-					Welcome to My Portfolio
-				</h3> */}
+    return (
+        <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden">
+            <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
+            <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
 
-				<h1 className="text-2xl md:text-4xl lg:text-4xl font-extrabold leading-tight text-gray-900">
-					Hi, I’m <span className="text-blue-700">Mohamed Hamdhan J</span>
-				</h1>
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-12 lg:py-20">
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="w-full lg:w-3/5 space-y-8 text-center lg:text-left z-10"
+                >
+                    <div className="space-y-4">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-slate-900">
+                            Hi, I’m{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                                Mohamed Hamdhan J
+                            </span>
+                        </h1>
 
-				<h2 className="text-2xl md:text-3xl font-semibold text-gray-600">
-					Web Developer
-				</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-700 flex items-center justify-center lg:justify-start gap-3">
+                            Web Developer
+                            <span className="h-1 w-12 bg-blue-600 rounded-full hidden md:block"></span>
+                        </h2>
+                    </div>
 
-				<ul className="text-md text-justify lg:text-lg text-gray-600 leading-relaxed list-disc list-inside space-y-5 mt-2">
-					<li>Passionate Developer skilled in building clean, responsive, and scalable web applications.</li>
-					<li>Proficient in <strong>HTML, CSS, Tailwind CSS</strong> for designing intuitive and mobile-friendly UIs.</li>
-					<li>Hands-on experience in frontend development using <strong>React.js and Python Django.</strong></li>
-					<li>Experience in <strong>customizing and modifying existing frontend templates</strong>to meet client requirements.</li>
-					<li>Actively exploring and learning modern development tools and frameworks.</li>
-				</ul>
+                    <div className="max-w-2xl mx-auto lg:mx-0">
+                        <p className="text-lg text-slate-600 leading-relaxed text-justify lg:text-left mb-6">
+                            Passionate Developer skilled in building{" "}
+                            <span className="text-slate-900 font-medium">
+                                clean, responsive, and scalable
+                            </span>{" "}
+                            web applications. Proficient in modern technologies like{" "}
+                            <span className="text-blue-600 font-medium">
+                                React.js, Python Django, and Tailwind CSS
+                            </span>
+                            . I specialize in creating intuitive user interfaces and
+                            customizing frontend templates to deliver high-quality
+                            client solutions.
+                        </p>
+                    </div>
 
-				<div className="flex sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-					<a
-						href={resumePDF}
-						download="Mohamed_Hamdhan_Resume"
-						className="px-6 lg:px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-1 transition duration-300"
-					>
-						Download CV
-					</a>
-					<a
-						href="#projects"
-						className="px-6 lg:px-8 py-3 border-2 border-blue-600 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transform hover:-translate-y-1 transition duration-300"
-					>
-						View Projects
-					</a>
-				</div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <motion.a
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            href={resumePDF}
+                            download="Mohamed_Hamdhan_Resume"
+                            className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl shadow-xl shadow-slate-200 hover:bg-blue-600 flex items-center justify-center gap-2 transition-all duration-300"
+                        >
+                            <Download size={18} />
+                            Download CV
+                        </motion.a>
 
-				{/* Skills Summary */}
-				{/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-gray-700 pt-10">
-					<div className="bg-white rounded-lg shadow p-3 text-center hover:shadow-md transition">
-						<p className="font-semibold text-blue-600">React.js</p>
-						<p className="text-gray-500">Frontend</p>
-					</div>
-					<div className="bg-white rounded-lg shadow p-3 text-center hover:shadow-md transition">
-						<p className="font-semibold text-blue-600">Tailwind CSS</p>
-						<p className="text-gray-500">UI Design</p>
-					</div>
-					<div className="bg-white rounded-lg shadow p-3 text-center hover:shadow-md transition">
-						<p className="font-semibold text-blue-600">JavaScript</p>
-						<p className="text-gray-500">Logic & API</p>
-					</div>
-					<div className="bg-white rounded-lg shadow p-3 text-center hover:shadow-md transition">
-						<p className="font-semibold text-blue-600">Node.js</p>
-						<p className="text-gray-500">Express</p>
-					</div>
-				</div> */}
-			</motion.div>
+                        <motion.a
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            href="#projects"
+                            className="w-full sm:w-auto px-8 py-4 border-2 border-slate-200 text-slate-700 font-bold rounded-2xl hover:bg-slate-50 hover:border-blue-200 flex items-center justify-center gap-2 transition-all duration-300"
+                        >
+                            View Projects
+                            <ArrowRight size={18} />
+                        </motion.a>
+                    </div>
+                </motion.div>
 
-			<motion.div
-				initial={{ opacity: 0, scale: 0.95 }}
-				animate={{ opacity: 1, scale: 1 }}
-				transition={{ duration: 0.7 }}
-				className="w-full lg:w-1/2 flex justify-center lg:justify-end h-full"
-			>
-				<div className="relative group mt-5 lg:mt-0">
-					<div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-800 to-transparent opacity-40 lg:opacity-70 blur-md lg:blur-lg group-hover:opacity-100 transition duration-500"></div>
-					<img
-						src={myPhoto}
-						alt="Mohamed Hamdhan"
-						className="relative w-72 h-96 md:w-96 md:h-full object-cover rounded-2xl lg:shadow-xl border border-gray-200 group-hover:scale-105 transition duration-500"
-					/>
-					{/* <div className="absolute bottom-4 right-4 bg-white px-3 py-2 rounded-lg shadow-lg text-sm font-semibold text-blue-700 border border-blue-100">
-						Available for Work
-					</div> */}
-				</div>
-			</motion.div>
-		</div>
-	)
-}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className="w-full lg:w-2/5 flex justify-center lg:justify-end"
+                >
+                    <div className="relative group">
+                        <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-indigo-400 rounded-[2.5rem] opacity-20 blur-2xl group-hover:opacity-30 transition duration-500"></div>
+
+                        <div className="relative">
+                            <img
+                                src={myPhoto}
+                                alt="Mohamed Hamdhan"
+                                className="w-64 h-80 md:w-80 md:h-[450px] object-cover rounded-[2rem] shadow-2xl border-4 border-white group-hover:scale-[1.02] transition duration-500"
+                            />
+
+                            <motion.div
+                                initial={{ x: 20, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.5 }}
+                                className="absolute -bottom-6 -left-6 md:-left-10 bg-white p-4 rounded-2xl shadow-xl border border-blue-50 hidden sm:block"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                        <Github size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">
+                                            Check my
+                                        </p>
+                                        <p className="text-sm font-extrabold text-slate-900">
+                                            Code Portfolio
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
+    );
+};
 
 export default Home;
