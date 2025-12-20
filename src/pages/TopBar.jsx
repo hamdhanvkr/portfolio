@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
-import MobileSidebar from './MobileSidebar';
+import MobileMenu from './MobileMenu';
 
 const TopBar = () => {
 
@@ -81,7 +81,7 @@ const TopBar = () => {
                 </div>
             </header>
 
-            {isOpen && <MobileSidebar setIsOpen={setIsOpen} navItems={navItems} />}
+            {isOpen && <MobileMenu setIsOpen={setIsOpen} navItems={navItems} />}
         </>
     );
 };
