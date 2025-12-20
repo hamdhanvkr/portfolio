@@ -1,184 +1,162 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 import project1Img from '../assets/obe1.png';
 import project2Img from '../assets/upvc1.png';
 import project3Img from '../assets/trust1.png';
-import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa'; 
+
+// Cleaner Badge Mapping
+const techColors = {
+    React: 'bg-cyan-100 text-cyan-800 border-cyan-200',
+    Node: 'bg-green-100 text-green-800 border-green-200',
+    Tailwind: 'bg-blue-100 text-blue-700 border-blue-200',
+    MySQL: 'bg-indigo-100 text-indigo-700 border-indigo-200',
+    MongoDB: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+    JavaScript: 'bg-yellow-100 text-yellow-800 border-yellow-200',
+    PHP: 'bg-purple-100 text-purple-800 border-purple-200',
+};
 
 const getTechStackBadges = (techs) => (
-	<div className="flex flex-wrap gap-2 mt-3">
-		{techs.map((tech, i) => (
-			<span key={i} className={`text-sm mt-1 font-semibold px-3 py-1 rounded-full 
-                ${tech === 'React' ? 'bg-cyan-100 text-cyan-800' :
-					tech === 'Node' ? 'bg-green-100 text-green-800' :
-						tech === 'Tailwind' ? 'bg-blue-100 text-blue-700' :
-							tech === 'MySQL' ? 'bg-indigo-100 text-indigo-700' :
-								'bg-gray-200 text-gray-700'} 
-                `}>
-				{tech}
-			</span>
-		))}
-	</div>
+    <div className="flex flex-wrap gap-2 mt-3">
+        {techs.map((tech) => (
+            <span
+                key={tech}
+                className={`text-xs font-bold px-3 py-1 rounded-full border ${techColors[tech] || 'bg-gray-100 text-gray-700 border-gray-200'
+                    }`}
+            >
+                {tech}
+            </span>
+        ))}
+    </div>
 );
 
 const projects = [
-	{
-		title: 'Outcome Based Education',
-		description:
-			'An OBE system implemented for over 8000 students and 510 staff. It manages and calculates CIA students internal marks for 50,000+ records in a centralized database, ensuring the data accuracy and streamlined academic analysis and reports. This live system is currently used at Jamal Mohamed College for real-time OBE mark entry.',
-		image: project1Img,
-		link: 'https://www.jmc.edu/',
-		github: '#',
-		techStack: ['React', 'Node', 'Express', 'MySQL'],
-	},
-	{
-		title: 'UPVC Quotation Management',
-		description:
-			'A full-featured quotation system for managing doors windows and louver orders. Supports customer profiles printable quotes report generation and order tracking. The system simplifies the order process and ensures consistent professional customer interaction. This live system is currently used at Champion products company.',
-		image: project2Img,
-		link: '#',
-		github: '#',
-		techStack: ['React','Tailwind CSS', 'Node', 'MongoDB'],
-	},
-	{
-		title: 'AL Muhmin Trust Management',
-		description:
-			'A secure trust management platform for tracking member contributions and donation distributions. Includes date-wise entry, fund balance monitoring, and personalized member dashboards. An admin panel ensures centralized control of operations and records. This live system is currently used by the Trust Management committee.',
-		image: project3Img,
-		link: '#',
-		github: '#',
-		techStack: ['HTML', 'CSS', 'JavaScript', 'PHP'],
-	},
+    {
+        title: 'Outcome Based Education',
+        description: 'A centralized system managing academic records for 8,000+ students and 500+ staff. Facilitates real-time CIA mark entry and automated report generation for Jamal Mohamed College.',
+        image: project1Img,
+        link: 'https://www.jmc.edu/',
+        github: '#',
+        techStack: ['React', 'Node', 'MySQL'],
+        isLive: true,
+    },
+    {
+        title: 'UPVC Quotation Management',
+        description: 'Comprehensive ERP solution for window and door manufacturers. Features customer profile management, automated PDF quotation generation, and real-time order tracking.',
+        image: project2Img,
+        link: '#',
+        github: '#',
+        techStack: ['React', 'Tailwind', 'Node', 'MongoDB'],
+        isLive: true,
+    },
+    {
+        title: 'AL Muhmin Trust Platform',
+        description: 'A secure financial tracking platform for non-profits. Manages member contributions, donation distributions, and provides personalized dashboards for fund transparency.',
+        image: project3Img,
+        link: '#',
+        github: '#',
+        techStack: ['JavaScript', 'PHP', 'MySQL'],
+        isLive: true,
+    },
 ];
 
 const containerVariants = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: {
-			staggerChildren: 0.15,
-		},
-	},
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.2 },
+    },
 };
 
 const itemVariants = {
-	hidden: { opacity: 0, y: 50 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 0.7, 
-			ease: "easeOut"
-		}
-	},
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
+    },
 };
 
-
 function Project() {
+    return (
+        <section id="projects" className="py-20">
+            <div className="container mx-auto">
+                {/* Header Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                        Featured Projects
+                    </h2>
+                    <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
+                </motion.div>
 
-	return (
-		<section
-			id="projects"
-			className="min-h-screen bg-white text-gray-900"
-		>
-			<div className="mx-auto">
+                {/* Projects Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
+                        >
+                            {/* Image with Overlay */}
+                            <div className="relative aspect-video overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
 
-				<motion.div
-					initial={{ opacity: 0, y: -20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-16"
-				>
-					{/* <h3 className="text-sm uppercase tracking-[4px] text-blue-600 font-semibold mb-2">
-						My Portfolio
-					</h3>
-					<p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-						High-impact, real-world solutions developed using modern frontend technologies.
-					</p> */}
-				</motion.div>
+                            </div>
 
+                            {/* Content */}
+                            <div className="p-6 flex flex-col flex-grow">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                    {project.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                    {project.description}
+                                </p>
 
-				{/* Projects Grid */}
-				<motion.div
-					variants={containerVariants}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.2 }}
-					className="grid md:grid-cols-2 lg:grid-cols-2 
-					gap-10"
-				>
-					{projects.map((project, index) => (
-						<motion.div
-							key={index}
-							variants={itemVariants}
-							className="group bg-white rounded-xl p-0 
-                                shadow-xl border border-gray-100 
-                                transition-all duration-500 ease-out 
-                                hover:shadow-2xl hover:scale-[1.01] hover:border-blue-300 
-                                flex flex-col overflow-hidden"
-						>
-							{/* Image Container */}
-							<div className="relative w-full h-48 lg:h-66 overflow-hidden border-b border-gray-100">
-								<img
-									src={project.image}
-									alt={project.title}
-									className="w-full h-full transition-transform duration-500 group-hover:scale-[1.05]"
-								/>
-								<div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
-							</div>
+                                <div className="mt-auto">
+                                    <div className="flex items-center gap-2 text-gray-800 font-bold text-xs uppercase tracking-wider mb-2">
+                                        <FaCode className="text-blue-600" />
+                                        Tech Stack
+                                    </div>
+                                    {getTechStackBadges(project.techStack)}
 
-							<div className="p-6 flex flex-col justify-between flex-1">
-								<div>
-									<h3 className="text-lg lg:text-2xl font-bold text-gray-900 mb-3 border-b-2 border-blue-100 pb-2">
-										{project.title}
-									</h3>
-									<p className="text-gray-600 text-base leading-relaxed text-justify mb-4">
-										{project.description}
-									</p>
-									<div className="mb-6 pt-4 border-t border-gray-100">
-										<p className="text-md font-bold text-gray-800 mb-2 flex items-center gap-2">
-											<FaCode className="text-blue-600" /> Tech Stack :
-										</p>
-										{getTechStackBadges(project.techStack)}
-									</div>
-
-								</div>
-
-								{/* Dual Action Buttons - Matches Home's primary/secondary button style */}
-								<div className="flex gap-4 justify-start pt-6 border-t border-gray-100">
-									<a
-										href={project.link}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex w-38 justify-center items-center gap-2 bg-blue-600 text-white px-5 py-2 font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 text-sm"
-									>
-										<FaExternalLinkAlt className="text-xs" />
-										View Project
-									</a>
-									<a
-										href={project.github}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex w-35 justify-center items-center gap-2 border-2 border-blue-600 text-blue-700 px-5 py-2 font-semibold rounded-lg hover:bg-blue-50 transition duration-300 text-sm"
-									>
-										<FaGithub className="text-xs" />
-										GitHub
-									</a>
-								</div>
-							</div>
-						</motion.div>
-					))}
-				</motion.div>
-
-				{/* Conclusion Line */}
-				{/* <p className="mt-20 text-center text-lg text-gray-600 font-medium">
-					Ready to collaborate? <a href="#contact" className="text-blue-600 font-semibold underline hover:text-blue-800 transition duration-300">Get in touch.</a>
-				</p> */}
-
-			</div>
-		</section>
-	);
+                                    {/* Action Buttons */}
+                                    <div className="flex gap-3 mt-8">
+                                        <a
+                                            href={project.link}
+                                            className="flex-1 flex justify-center items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 transition shadow-md"
+                                        >
+                                            <FaExternalLinkAlt size={12} /> Live Demo
+                                        </a>
+                                        <a
+                                            href={project.github}
+                                            className="flex-1 flex justify-center items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-gray-50 transition"
+                                        >
+                                            <FaGithub size={14} /> Source
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
+    );
 }
 
 export default Project;
