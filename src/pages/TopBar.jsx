@@ -29,7 +29,7 @@ const TopBar = () => {
         <>
             <header
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-                    ? 'py-3 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm'
+                    ? 'py-3 bg-white/80 backdrop-blur-md border-gray-200/50 shadow-sm'
                     : 'py-5 bg-transparent'
                     }`}
                 role="banner"

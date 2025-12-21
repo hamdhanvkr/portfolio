@@ -87,12 +87,12 @@ function Experiance() {
                             <div className="p-6 w-full flex flex-col justify-between flex-1">
                                 <div>
                                     <h2 className="text-2xl font-bold text-gray-900 mb-4">{exp.title}</h2>
-                                    <p className="text-lg font-semibold text-blue-700 mb-4">{exp.company}</p>
-                                    <div className="flex items-center text-sm text-gray-500 mb-4 pb-4 border-b border-gray-100">
+                                    <p className="text-xl font-semibold text-blue-700 mb-4">{exp.company}</p>
+                                    <div className="flex items-center text-md text-gray-500 mb-4 pb-4 border-b border-gray-100">
                                         <FaCalendarAlt className="text-blue-600 mr-2" />
                                         {exp.duration}
                                     </div>
-                                    <p className="text-gray-600 text-base leading-relaxed mb-4 text-justify">{exp.description}</p>
+                                    <p className="text-gray-600 text-md leading-relaxed mb-4 text-justify">{exp.description}</p>
                                     <div className="mt-4 pt-4 border-t border-gray-100">
                                         <p className="text-sm font-bold text-gray-800 mb-3 flex items-center gap-2">
                                             <FaCode className="text-blue-600" /> Key Technologies :

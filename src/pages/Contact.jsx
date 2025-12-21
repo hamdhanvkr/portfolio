@@ -109,7 +109,7 @@ function Contact() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mt-6 max-w-2xl mx-auto"
+                    className="mt-48 max-w-2xl mx-auto"
                 >
                     <div className="relative group">
                         <div className="relative bg-gray-900 rounded-2xl p-8">
@@ -121,17 +121,22 @@ function Contact() {
                                 <FaTerminal className="ml-auto text-gray-600" />
                             </div>
 
-                            <div className="space-y-4">
+                            <div className="space-y-4 relative">
                                 <p className="font-mono text-md md:text-xl text-blue-400">
-                                    <span className="text-purple-400">SELECT</span> * <span className="text-purple-400">FROM</span> success
+                                    <span className="text-purple-400">SELECT</span> *{" "}
+                                    <span className="text-purple-400">FROM</span> success
                                     <br />
-                                    <span className="text-purple-400">WHERE</span> motivation = <span className="text-green-400">'High'</span>;
+                                    <span className="text-purple-400">WHERE</span> motivation ={" "}
+                                    <span className="text-green-400">'High'</span>;
                                 </p>
-                                <div className="pt-4 border-t border-gray-800 flex justify-between items-center">
-                                    <span className="text-gray-500 font-mono text-sm tracking-tighter">// Result: 1 row returned</span>
-                                    <span className="hidden lg:flex text-gray-300 italic font-medium">Passion drives progress</span>
+
+                                <div className="border-t border-gray-800 h-10 relative">
+                                    <span className="absolute bottom-0 right-0 text-gray-300 italic font-medium">
+                                        Passion drives progress
+                                    </span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </motion.div>

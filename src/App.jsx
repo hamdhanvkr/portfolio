@@ -106,7 +106,7 @@ function App() {
                     <Contact />
                 </section>
 
-                <footer className="text-sm bg-black py-6 font-bold lg:text-lg text-center text-gray-600">
+                <footer className="text-sm bg-gray-900 py-6 font-bold lg:text-lg text-center text-white">
                     © {new Date().getFullYear()} Mohamed Hamdhan. All Rights Reserved.
                 </footer>
 

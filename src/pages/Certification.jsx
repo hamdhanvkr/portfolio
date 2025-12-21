@@ -11,35 +11,35 @@ const certificates = [
     {
         title: "MySQL",
         issuer: "LearnZConnect",
-        description: "Demonstrated proficiency in database design, complex querying, and data manipulation techniques.",
+        description: "Demonstrated proficiency in MySQL database design, querying, and data manipulation techniques, with hands-on experience in relational database management.",
         image: Sql,
         link: "https://learnzconnect.com/certificates/CERT-2025-6ac6673c-e99e-4dee-84b5-2c1afc75fae2",
     },
     {
         title: "Python for Data Science",
         issuer: "SA Career Development",
-        description: "Comprehensive foundation in data analytics using Python, focusing on Pandas, NumPy, and Matplotlib.",
+        description: "Certified by SA Career Development Centre, with a strong foundation in data analytics using Python. Gained practical experience Pandas, NumPy, and data visualization using Matplotlib.",
         image: Py,
         link: "",
     },
     {
         title: "Oracle SQL Fundamentals",
         issuer: "Great Learning",
-        description: "Covered core RDBMS concepts including DDL/DML, joins, subqueries, and performance optimization.",
+        description: "Completed certification from Great Learning in Oracle SQL, covering core concepts such as DDL, DML, joins, subqueries, clauses and performance optimization techniques.",
         image: Oracle,
         link: "https://olympus.mygreatlearning.com/courses/59439/certificate?pb_id=581",
     },
     {
-        title: "NSD: Automated Monitoring",
+        title: "Automated Monitoring",
         issuer: "Academic Recognition",
-        description: "Facial recognition system using AI and Computer Vision for real-time attendance tracking.",
+        description: "Awarded for presenting an Automated Monitoring System with Facial Recognition, showcasing real-time face detection and attendance tracking using AI and computer vision technologies.",
         image: Nsdpy,
         link: "",
     },
     {
         title: "Advanced Cyber Threats",
         issuer: "Cybersecurity Domain",
-        description: "Practical knowledge in malware analysis, risk assessment, and mitigating advanced system vulnerabilities.",
+        description: "Recognized for gaining practical knowledge in identifying, analyzing, and mitigating cyber threats and vulnerabilities, including malware analysis, risk assessment, and secure system practices.",
         image: Threats,
         link: "",
     },
@@ -66,7 +66,7 @@ function Certification() {
 
     return (
         <section id="certification" className="py-24 bg-gray-50/30">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-2 lg:px-8">
 
                 {/* Certificates Grid */}
                 <motion.div
@@ -87,13 +87,13 @@ function Certification() {
                                 <img
                                     src={cert.image}
                                     alt={cert.title}
-                                    className="w-full h-full object-cover transition-transform duration-700"
+                                    className="w-full h-full object-fit transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors duration-300"></div>
                             </div>
 
                             {/* Details Container */}
-                            <div className="p-7 flex flex-col flex-grow">
+                            <div className="p-7 flex flex-col flex-grow text-justify">
                                 <div className="flex-grow">
                                     <div className="flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-[2px] mb-3">
                                         <FaCheckCircle /> {cert.issuer}
@@ -101,14 +101,14 @@ function Certification() {
                                     <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">
                                         {cert.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                                    <p className="text-gray-600 text-md leading-relaxed">
                                         {cert.description}
                                     </p>
                                 </div>
 
                                 {/* Footer: Verification Link */}
                                 <div className="mt-8 pt-5 border-t border-gray-100 flex items-center justify-between">
-                                    {cert.link ? (
+                                    {/* {cert.link ? (
                                         <a
                                             href={cert.link}
                                             target="_blank"
@@ -121,8 +121,8 @@ function Certification() {
                                         <div className="inline-flex items-center gap-2 text-gray-400 text-xs font-semibold">
                                             <FaFileAlt size={12} /> Certificate on Request
                                         </div>
-                                    )}
-                                    <FaAward className="text-gray-200 group-hover:text-blue-600 transition-colors duration-500 text-xl" />
+                                    )} */}
+                                    <FaAward className="text-blue-600 group-hover:text-gray-200 transition-colors duration-500 text-xl" />
                                 </div>
                             </div>
                         </motion.div>

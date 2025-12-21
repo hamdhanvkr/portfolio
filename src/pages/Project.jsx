@@ -32,7 +32,7 @@ const getTechStackBadges = (techs) => (
 const projects = [
     {
         title: 'Outcome Based Education',
-        description: 'A centralized system managing academic records for 8,000+ students and 500+ staff. Facilitates real-time CIA mark entry and automated report generation for Jamal Mohamed College.',
+        description: 'An OBE system implemented for over 8000 students and 510 staff. It manages and calculates CIA students internal marks for 50,000+ records in a centralized database, ensuring the data accuracy and streamlined academic analysis and reports. This live system is currently used at Jamal Mohamed College for real-time OBE mark entry.',
         image: project1Img,
         link: 'https://www.jmc.edu/',
         github: '#',
@@ -41,7 +41,7 @@ const projects = [
     },
     {
         title: 'UPVC Quotation Management',
-        description: 'Comprehensive ERP solution for window and door manufacturers. Features customer profile management, automated PDF quotation generation, and real-time order tracking.',
+        description: 'A full-featured quotation system for managing doors windows and louver orders. Supports customer profiles printable quotes report generation and order tracking. The system simplifies the order process and ensures consistent professional customer interaction. This live system is currently used at Champion products company.',
         image: project2Img,
         link: '#',
         github: '#',
@@ -50,11 +50,11 @@ const projects = [
     },
     {
         title: 'AL Muhmin Trust Platform',
-        description: 'A secure financial tracking platform for non-profits. Manages member contributions, donation distributions, and provides personalized dashboards for fund transparency.',
+        description: 'A secure trust management platform for tracking member contributions and donation distributions. Includes date-wise entry, fund balance monitoring, and personalized member dashboards. An admin panel ensures centralized control of operations and records. This live system is currently used by the Trust Management committee.',
         image: project3Img,
         link: '#',
         github: '#',
-        techStack: ['JavaScript', 'PHP', 'MySQL'],
+        techStack: ['React', 'Node', 'MongoDB'],
         isLive: true,
     },
 ];
@@ -94,7 +94,7 @@ function Project() {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
+                            className="bg-white text-justify rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
                         >
                             {/* Image with Overlay */}
                             <div className="relative aspect-video overflow-hidden">
@@ -108,10 +108,10 @@ function Project() {
 
                             {/* Content */}
                             <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                <p className="text-gray-600 text-md lg:text-lg leading-relaxed mb-6">
                                     {project.description}
                                 </p>
 
@@ -123,7 +123,7 @@ function Project() {
                                     {getTechStackBadges(project.techStack)}
 
                                     {/* Action Buttons */}
-                                    <div className="flex gap-3 mt-8">
+                                    {/* <div className="flex gap-3 mt-8">
                                         <a
                                             href={project.link}
                                             className="flex-1 flex justify-center items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 transition shadow-md"
@@ -136,7 +136,7 @@ function Project() {
                                         >
                                             <FaGithub size={14} /> Source
                                         </a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </motion.div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github } from "lucide-react";
-import myPhoto from "../assets/Me1.jpg";
+import myPhoto from "../assets/HOMEZ1.jpeg";
 import resumePDF from "../assets/CV.pdf";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
             <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
             <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-12 lg:py-20">
+            <div className="max-w-7xl mx-auto px-2 lg:px-12 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-12 lg:py-20">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -33,12 +33,11 @@ const Home = () => {
 
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-700 flex items-center justify-center lg:justify-start gap-3">
                             Web Developer
-                            <span className="h-1 w-12 bg-blue-600 rounded-full hidden md:block"></span>
                         </h2>
                     </div>
 
                     <div className="max-w-2xl mx-auto lg:mx-0">
-                        <p className="text-lg text-slate-600 leading-relaxed text-justify lg:text-left mb-6">
+                        <p className="text-md text-slate-600 leading-relaxed text-justify lg:text-justify mb-6">
                             Passionate Developer skilled in building{" "}
                             <span className="text-slate-900 font-medium">
                                 clean, responsive, and scalable
@@ -90,10 +89,10 @@ const Home = () => {
                             <img
                                 src={myPhoto}
                                 alt="Mohamed Hamdhan"
-                                className="w-64 h-80 md:w-80 md:h-[450px] object-cover rounded-[2rem] shadow-2xl border-4 border-white group-hover:scale-[1.02] transition duration-500"
+                                className="w-72 h-96 md:w-80 md:h-[450px] object-cover rounded-[2rem] shadow-2xl border-4 border-white group-hover:scale-[1.02] transition duration-500"
                             />
 
-                            <motion.div
+                            {/* <motion.div
                                 initial={{ x: 20, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
@@ -112,7 +111,7 @@ const Home = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.div> */}
                         </div>
                     </div>
                 </motion.div>
