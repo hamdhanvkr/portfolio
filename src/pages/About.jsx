@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Users, Lightbulb, TrendingUp } from 'lucide-react';
+import { GraduationCap, Users, Lightbulb, TrendingUp, Globe, CheckCircle } from 'lucide-react';
 import aboutsImage from '../assets/abt3.jpeg';
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
                             <img
                                 src={aboutsImage}
                                 alt="Mohamed Hamdhan"
-                                className="w-72 h-96 lg:w-full lg:h-[550px] object-cover rounded-[2.5rem] grayscale-[20%] hover:grayscale-0 transition duration-700"
+                                className="w-72 h-96 lg:w-full lg:h-[600px] object-cover rounded-[2.5rem] grayscale-[20%] hover:grayscale-0 transition duration-700"
                             />
                         </div>
                     </div>
@@ -73,29 +73,20 @@ const About = () => {
                                 Strong <strong className="text-slate-900">collaborative team player</strong> with experience in building efficient applications.
                             </p>
                         </motion.div>
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <Globe className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Driven by a passion for solving real-world problems through <strong className="text-slate-900">innovative digital solutions</strong>.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                            <CheckCircle className="text-blue-600 mb-4" size={28} />
+                            <p className="text-slate-600 leading-relaxed">
+                                Successfully contributed to and completed <strong className="text-slate-900">multiple team projects</strong> with effective coordination.
+                            </p>
+                        </motion.div>
                     </div>
-
-                    <motion.div variants={itemVariants} className="space-y-4 pt-4 border-t border-slate-100 text-justify">
-                        <div className="flex items-start gap-4">
-                            <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 shrink-0">
-                                <div className="h-2 w-2 rounded-full bg-blue-600"></div>
-                            </div>
-                            <p className="text-slate-600 text-md">
-                                Driven by a passion for solving real-world problems through{' '}
-                                <span className="text-slate-900 font-medium">innovative digital solutions</span>.
-                            </p>
-                        </div>
-
-                        <div className="flex items-start gap-4">
-                            <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 shrink-0">
-                                <div className="h-2 w-2 rounded-full bg-blue-600"></div>
-                            </div>
-                            <p className="text-slate-600 text-md">
-                                Successfully contributed to and completed{' '}
-                                <span className="text-slate-900 font-medium">multiple team projects</span> with effective coordination.
-                            </p>
-                        </div>
-                    </motion.div>
                 </div>
             </motion.div>
         </section>

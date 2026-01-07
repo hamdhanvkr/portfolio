@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { X, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.95 },
@@ -29,6 +30,14 @@ const itemVariants = {
 };
 
 const MobileMenu = ({ setIsOpen, navItems }) => {
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, []);
 
     return (
         <div className="fixed inset-0 z-[100] p-6 flex items-center justify-center">
@@ -84,7 +93,8 @@ const MobileMenu = ({ setIsOpen, navItems }) => {
                 {/* Bottom Contact / Action */}
                 <div className="p-4 bg-blue-50/50">
                     <a
-                        href="#contact"
+                        onClick={() => setIsOpen(false)}
+                        href="/#contact"
                         className="block w-full text-center py-4 rounded-2xl bg-blue-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-[0.98]"
                     >
                         Let's Talk

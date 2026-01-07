@@ -34,7 +34,7 @@ function Skill() {
 
     return (
         <section id="skills" className="py-12 lg:py-24 bg-white">
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-2">
                 <div className="space-y-12">
                     {skillCategories.map((category, catIdx) => (
                         <div key={catIdx} className="relative">

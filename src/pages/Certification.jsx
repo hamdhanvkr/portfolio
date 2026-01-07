@@ -66,7 +66,7 @@ function Certification() {
 
     return (
         <section id="certification" className="py-24 bg-gray-50/30">
-            <div className="max-w-7xl mx-auto px-2 lg:px-8">
+            <div className="max-w-7xl mx-auto px-2 lg:px-2">
 
                 {/* Certificates Grid */}
                 <motion.div

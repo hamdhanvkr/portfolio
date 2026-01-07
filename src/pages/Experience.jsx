@@ -58,9 +58,9 @@ function Experiance() {
     return (
         <section
             id="experience"
-            className="min-h-screen bg-white text-gray-900"
+            className="min-h-screen bg-white text-gray-900 lg:px-10"
         >
-            <div className="mx-auto">
+            <div className="mx-auto ">
 
                 <motion.div
                     variants={containerVariants}
@@ -79,7 +79,7 @@ function Experiance() {
                                 <img
                                     src={exp.image}
                                     alt={exp.title}
-                                    className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-100"
+                                    className="w-full h-full object-fill rounded-lg transition-transform duration-500 group-hover:scale-100"
                                 />
                                 <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
                             </div>

@@ -24,14 +24,14 @@ const Home = () => {
                     className="w-full lg:w-3/5 space-y-8 text-center lg:text-left z-10"
                 >
                     <div className="space-y-4">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-slate-900">
+                        <h1 className="text-2xl md:text-4xl lg:text-4xl font-extrabold leading-[1.1] text-slate-900">
                             Hi, I’m{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                                 Mohamed Hamdhan J
                             </span>
                         </h1>
 
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-700 flex items-center justify-center lg:justify-start gap-3">
+                        <h2 className="text-xl md:text-3xl font-bold text-slate-700 flex items-center justify-center lg:justify-start gap-3">
                             Web Developer
                         </h2>
                     </div>
